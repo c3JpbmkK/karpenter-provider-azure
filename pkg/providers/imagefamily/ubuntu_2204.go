@@ -98,6 +98,7 @@ func (u Ubuntu2204) UserData(kubeletConfig *corev1beta1.KubeletConfiguration, ta
 		KubeletClientTLSBootstrapToken: u.Options.KubeletClientTLSBootstrapToken,
 		NetworkPlugin:                  u.Options.NetworkPlugin,
 		NetworkPolicy:                  u.Options.NetworkPolicy,
-		KubernetesVersion:              u.Options.KubernetesVersion,
+		// IPForwarding:                   u.Options.IPForwarding,
+		KubernetesVersion: u.Options.KubernetesVersion,
 	}
 }
