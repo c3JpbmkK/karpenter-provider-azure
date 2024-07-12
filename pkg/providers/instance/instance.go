@@ -229,7 +229,7 @@ func (p *Provider) newNetworkInterfaceForVM(vmName string, backendPools *loadbal
 				},
 			},
 			EnableAcceleratedNetworking: to.Ptr(enableAcceleratedNetworking),
-			EnableIPForwarding:          to.Ptr(true),
+			EnableIPForwarding:          to.Ptr(false),
 		},
 	}
 }
