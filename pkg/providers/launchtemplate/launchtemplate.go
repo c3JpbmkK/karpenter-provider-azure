@@ -37,12 +37,14 @@ import (
 const (
 	karpenterManagedTagKey = "karpenter.azure.com/cluster"
 
+	// @srini remove dependency
 	networkDataplaneCilium  = "cilium"
 	vnetDataPlaneLabel      = "kubernetes.azure.com/ebpf-dataplane"
 	vnetSubnetNameLabel     = "kubernetes.azure.com/network-subnet"
 	vnetGUIDLabel           = "kubernetes.azure.com/nodenetwork-vnetguid"
 	vnetPodNetworkTypeLabel = "kubernetes.azure.com/podnetwork-type"
 
+	// @srini remove dependency
 	networkModeOverlay = "overlay"
 )
 

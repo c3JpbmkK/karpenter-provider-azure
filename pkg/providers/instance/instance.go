@@ -229,7 +229,8 @@ func (p *Provider) newNetworkInterfaceForVM(vmName string, backendPools *loadbal
 				},
 			},
 			EnableAcceleratedNetworking: to.Ptr(enableAcceleratedNetworking),
-			EnableIPForwarding:          to.Ptr(false),
+			// @srini
+			EnableIPForwarding: to.Ptr(true),
 		},
 	}
 }
@@ -245,6 +246,8 @@ func (p *Provider) createNetworkInterface(ctx context.Context, nicName string, l
 	}
 
 	nic := p.newNetworkInterfaceForVM(nicName, backendPools, instanceType)
+	nic.Properties.EnableIPForwarding = &options.FromContext(ctx).EnableIPForwarding
+
 	p.applyTemplateToNic(&nic, launchTemplateConfig)
 	logging.FromContext(ctx).Debugf("Creating network interface %s", nicName)
 	res, err := createNic(ctx, p.azClient.networkInterfacesClient, p.resourceGroup, nicName, nic)

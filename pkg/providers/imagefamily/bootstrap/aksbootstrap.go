@@ -48,7 +48,6 @@ type AKS struct {
 	KubeletClientTLSBootstrapToken string
 	NetworkPlugin                  string
 	NetworkPolicy                  string
-	IPForwarding                   string
 	KubernetesVersion              string
 }
 
